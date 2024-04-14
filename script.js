@@ -4,7 +4,7 @@ let unidadesDescarga = [3, 1, 2, 3, 2, 3, 8, 1, 3, 2, 2, 2, 8, 2]
 let campoAparatos = document.querySelector(".lista-aparatos")
 let diametro = 0;
 let unidades = 0;
-
+let tabla = document.querySelector(".tabla");
 let entrada = document.querySelector(".entrada");
 let boton = document.querySelector(".boton");
 let Q = 0;
@@ -13,11 +13,7 @@ let yc;
 let ynD
 let S = 0.02;
 let g = 9.81;
-
 let todosDatos = [];
-// Programa con el que se impriman los aparatos.
-
-// Valores de salida.
 let tramo = [];
 let uniDesca = [];
 let QmaxProba = [];
@@ -46,20 +42,15 @@ function unidadesDesDiame () {
             break
         }
     }
-
-    // console.log("Diametro: "  + diametro + "   Unidades Desacarga: " + unidades);
 }
 
 function calcYn(Qmax, D, V) {
     Qmax = Qmax / 1000;
     D = parseFloat(D);
     V = parseFloat(V);
-
     teta = (Qmax * 0.012) / ((D**(8/3))*(0.02**(1/2)));
     ynD = ((1.56*(teta**0.4666)*(1-0.565*((0.3353-teta)**0.4971))*D)).toFixed(4);
-
     teta = (Qmax * 0.012) / ((D**(8/3))*(0.02**(1/2)));
-
     while (true) {
         tata = Math.random() * 2*Math.PI;
         A = ((tata-Math.sin(tata))*D**2)/8;
@@ -77,19 +68,12 @@ function calcYn(Qmax, D, V) {
     Ynles.push(ynD);
 }
 
-let tabla = document.querySelector(".tabla");
-
 boton.addEventListener("click", function (){
     tabla.removeAttribute("hidden")
-    // else {
-    //     tabla.setAttribute("hidden")
-    // }
-
     tramo = [];
     uniDesca = [];
     QmaxProba = [];
     pendiente = [];
-    // diametroComer = [];
     VtuLLeno = [];
     seteDiams = [];
     Ycos = [];
@@ -100,7 +84,6 @@ boton.addEventListener("click", function (){
     console.log(entrada);
 
     for (j in Aparato) {
-        
         for (m in entrada){
             if (Aparato[j] == entrada[m]) {
                 diametro =  diametroPulAparato[j];
@@ -116,15 +99,12 @@ boton.addEventListener("click", function (){
             }
         }
     }
-
     for (i of uniDesca) {
         resultado += parseInt(i)
     }
 
     diametroComer.push(diametroComer.sort().reverse()[0]);
     diametro = diametroComer[0]
-    console.error(diametroComer)
-    alert(diametro)
     uniDesca.push(resultado);
     seteDiams.push(0.75*diametro);
 
@@ -133,55 +113,33 @@ boton.addEventListener("click", function (){
     QmaxProba.push(Q);
     VtuLLeno.push(V);
     calcYn(Q, diametro*0.0254, V);
-
-    console.warn(resultado)
-
+    
     for (h in uniDesca) {
         tramo.push(h);
         pendiente.push(0.02);
     }
-    console.error(pendiente + " tran: " + tramo)
-    console.log("Unidades Descarga: " + uniDesca);
-    console.log("Qmax: " + QmaxProba);
-    console.log("Diametro Comercial: " + diametroComer);
-    console.log("Velocidad: " + VtuLLeno);
-    console.log("Criticos: " + Ycos);
-    console.log("Normales: " + Ynles); 
-    console.log("70% Diametro: " + seteDiams);
-
     
-
     for (i in uniDesca) {
         let general = document.createElement("tr");
-
         let elemento1 = document.createElement("td");
         elemento1.textContent = tramo[i]
         elemento1.setAttribute("contentEditable", "true")
-
         let elemento2 = document.createElement("td");
         elemento2.textContent = uniDesca[i]
-
         let elemento3 = document.createElement("td");
         elemento3.textContent = QmaxProba[i]
-
         let elemento4 = document.createElement("td");
         elemento4.textContent = pendiente[i]
-
         let elemento5 = document.createElement("td");
         elemento5.textContent = (diametroComer[i]*0.0254).toFixed(4)
-
         let elemento6 = document.createElement("td");
         elemento6.textContent = VtuLLeno[i]
-
         let elemento7 = document.createElement("td");
         elemento7.textContent = Ycos[i]
-
         let elemento8 = document.createElement("td");
         elemento8.textContent = Ynles[i]
-
         let elemento9 = document.createElement("td");
         elemento9.textContent = (seteDiams[i]*0.0254).toFixed(4)
-
         general.appendChild(elemento1);
         general.appendChild(elemento2);
         general.appendChild(elemento3);
@@ -192,7 +150,5 @@ boton.addEventListener("click", function (){
         general.appendChild(elemento8);
         general.appendChild(elemento9);
         tabla.appendChild(general);
-
     }
 })
-
