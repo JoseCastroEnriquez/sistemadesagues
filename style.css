@@ -1,0 +1,108 @@
+* {
+    font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.elementos {
+    margin: 0.1vh;
+}
+
+.lista-aparatos {
+    margin-bottom: 3vh;
+    background-color: rgb(59, 159, 252);
+    color: white;
+    padding-left: 5vh;
+    padding-right: 5vh;
+    padding-top: 1vh;
+    padding-bottom: 5vh;
+    width: 300px;
+}
+
+.titulo {
+    text-align: center;
+}
+
+.campos {
+    width: 160px;
+    height: 100px;
+    background-color: rgb(59, 159, 252);
+    padding: 2vh;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3vh;
+}
+
+label {
+    display: block;
+    margin-bottom: 2vh;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+
+.entrada {
+    display: block;
+    margin-bottom: 2vh;
+    width: 150px;
+    border: none;
+    height: 22px;
+    background-color: rgba(46, 116, 239, 0.54);
+    border-bottom: white 2px solid;
+    border: white 1px solid;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.entrada:focus {
+    outline: none;
+    color: white;
+    text-align: center;
+}
+
+
+.boton {
+    display: block;
+    width: 120px;
+    letter-spacing: 2px;
+    height: 30px;
+    border: none;
+    background-color: rgb(39, 103, 251);
+    color: white;
+    position: relative;
+    /* left: calc(50% - 55px); */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    
+}
+
+.boton:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(9, 9, 171);
+}
+
+th {
+    border: solid black 1px;
+    background-color: rgb(59, 159, 252);
+    color: white;
+    width: 80px;
+}
+
+td {
+    border: solid black 1px;
+}
+
+.colum {
+    display: inline-block;
+
+}
+
+.tabla {
+    display: inline-block;
+    float: right;
+    position: relative;
+    left: -60px;
+}
