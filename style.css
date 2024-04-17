@@ -71,7 +71,6 @@ label {
     background-color: rgb(39, 103, 251);
     color: white;
     position: relative;
-    /* left: calc(50% - 55px); */
     margin-left: auto;
     margin-right: auto;
     font-size: 18px;
@@ -93,6 +92,7 @@ th {
 
 td {
     border: solid black 1px;
+
 }
 
 .colum {
