@@ -138,6 +138,7 @@ boton.addEventListener("click", function (){
 
         let elemento1 = document.createElement("td");
         elemento1.textContent = tramo[i]
+        elemento1.style.backgroundColor = "rgb(197, 226, 254)"
         elemento1.setAttribute("contentEditable", "true")
 
         let elemento2 = document.createElement("td");
@@ -153,20 +154,23 @@ boton.addEventListener("click", function (){
 
         if (i <= uniDesca.length -2) {
             elemento5 = document.createElement("td");
+            elemento5.setAttribute("contentEditable", "true")
+            elemento5.style.backgroundColor = "rgb(197, 226, 254)"
             elemento5.textContent = (diametroComer[i]*0.0254).toFixed(4);
         }
 
 
         else {
                 elemento5 = document.createElement("td");
+                elemento5.setAttribute("contentEditable", "true")
+                elemento5.style.backgroundColor = "rgb(197, 226, 254)"
                 elemento5.textContent = (diametroComerNo[0]*0.0254).toFixed(4);
         }
-        
         
 
         let elemento6 = document.createElement("td");
         elemento6.textContent = VtuLLeno[i]
-
+        
         let elemento7 = document.createElement("td");
         elemento7.textContent = Ycos[i]
 
